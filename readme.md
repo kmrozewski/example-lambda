@@ -2,9 +2,10 @@
 * `app.py` - basic lambda function written in python (3.8)
 * `requirements.txt` - additional packages for lambda function to be installed
 * `entry.sh` - entrypoint to execute Lambda Runtime Interface Client for Python
-* `Docker-basic` - dockerfile to build lambda function image based on AWS provided image
-* `Docker-optimized` - dockerfile with multistage build based on size-optimized linux distributions
-* `Docker-java` - approach to use multistage build with gradle projects written in java
+* `Dockerfile-basic` - dockerfile to build lambda function image based on AWS provided image
+* `Dockerfile-optimized` - dockerfile with multistage build based on size-optimized linux distributions
+* `Dockerfile-java` - approach to use multistage build with gradle projects written in java
+* `Dockerfile-node` - approach to use multistage build with nodejs projects
 
 
 # AWS provided image

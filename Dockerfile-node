@@ -1,0 +1,16 @@
+# Stage 1: build
+FROM node:lts-slim as frontend-build
+RUN mkdir /app
+WORKDIR /app
+COPY . /app
+COPY package.json .
+COPY package-lock.json .
+COPY .npmrc .
+RUN ["npm", "install"]
+RUN ["npm", "run", "build"]
+
+
+# Stage 2: run the app in nginx
+FROM nginx:stable-alpine as frontend-run
+COPY --from=frontend-build ./app/build /usr/share/nginx/html
+EXPOSE 80
