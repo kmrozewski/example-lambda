@@ -14,7 +14,7 @@
 docker build . -f Dockerfile-basic -t example-lambda-basic
 ```
 
-2. Check image size
+2. Check image size 
 ```bash
 docker images
 
