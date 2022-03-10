@@ -1,0 +1,10 @@
+# Stage 1: gradle build
+FROM gradle:7.3.3-jdk17-alpine AS backend-build
+COPY --chown=gradle:gradle . /home/gradle/src
+WORKDIR /home/gradle/src
+RUN gradle build -x check --no-daemon
+
+# Stage 2: prepare the app
+FROM openjdk:17-jdk-slim AS backend-run
+COPY --from=backend-build /home/gradle/src/build/libs/*.jar spring-boot-application.jar
+ENTRYPOINT ["java", "-jar", "spring-boot-application.jar"]
