@@ -58,6 +58,7 @@ docker images
 
 example-lambda-basic       latest    89d8431220d8   About an hour ago    681MB
 example-lambda-optimized   latest    897a62097c96   About a minute ago   61.7MB
+```
 
 3. Run the image and create a sample request to the lambda function
 ```bash
